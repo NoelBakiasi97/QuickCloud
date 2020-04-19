@@ -33,18 +33,32 @@
                         <h3>Contact Details</h3>
                     </div>
 
-                    <ul class="footer-links">
-                        <li><a href="mailto:#">info@yoursite.com</a></li>
-                        <li><a href="#">www.yoursite.com</a></li>
-                        <li>PO Box 16122 Collins Street West Victoria 8007 Australia</li>
-                        <li>+61 3 8376 6284</li>
-                    </ul><!-- end links -->
+                    @foreach ($contact as $item)
+                        <ul class="footer-links">
+                            <li><a href="#">{{$item->email}}</a></li>
+                            <li><a href="#">{{$item->url}}</a></li>
+                            <li>{{$item->adress}}</li>
+                            <li>{{$item->number}}</li>
+                        </ul><!-- end links -->
+                    @endforeach
+
                 </div><!-- end clearfix -->
             </div><!-- end col -->
             
         </div><!-- end row -->
     </div><!-- end container -->
+    <div class="bg-transparent rounded mt-5 p-2 mx-auto">
+        <form action="{{route('subscribe')}}" method="POST">
+            <div class="d-flex w-25 mx-auto">
+                @csrf
+                <input type="email" name="email" class="form-control" placeholder="Enter your email to subscribe to out newsletter !">
+                <button type="submit" class="btn btn-secondary"><i class="fa fa-envelope"></i></button>
+            </div>
+        </form>
+    </div>
 </footer><!-- end footer -->
+
+
 
 <div class="copyrights">
     <div class="container">

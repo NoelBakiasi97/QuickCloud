@@ -8,6 +8,9 @@ use App\Carousel;
 
 class CarouselController extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin');
+    }
 
     public function index(){
         $carousel = Carousel::all();
@@ -20,6 +23,11 @@ class CarouselController extends Controller
     }
 
     public function update(Request $request, $id){
+        $request->validate([
+            'title'=>'required|string',
+            'text'=>'required|string',
+            'img'=>'sometimes|image'
+        ]);
         $carousel = Carousel::find($id);
         $carousel->title=$request->input('title');
         $carousel->text=$request->input('text');

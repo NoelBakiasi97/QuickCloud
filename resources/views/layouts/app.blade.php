@@ -5,7 +5,7 @@
 @endsection
 
 @section('content_header')
-    <h1>Back Office</h1>
+    <h1 class="mb-4">Back Office  <span><i class="fas fa-briefcase"></i></span></h1>
 @stop
 
 @section('content')

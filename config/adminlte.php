@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Quick</b>Cloud',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -224,6 +224,26 @@ return [
             'text' => 'Carousel',
             'url'  => 'carousel',
             'icon' => 'fas fa-images',
+        ],
+        [
+            'text' => 'History',
+            'url'  => 'history',
+            'icon' => 'fas fa-history',
+        ],
+        [
+            'text' => 'Testimonials',
+            'url'  => 'testimonials',
+            'icon' => 'fas fa-comments',
+        ],
+        [
+            'text' => 'Contact',
+            'url'  => 'contact',
+            'icon' => 'fas fa-phone-alt',
+        ],
+        [
+            'text' => 'Mail',
+            'url'  => 'subscribers',
+            'icon' => 'fas fa-envelope',
         ],
         [
             'text' => 'change_password',

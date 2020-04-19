@@ -3,35 +3,39 @@
         <div class="row text-center">
 
             <div class="container my-5">
-                <form>
-                    <div class="bg-success p-2">
-                        <div class="d-flex w-100">  
-                            <label class="sr-only" for="domainnamehere">Domain name</label>
-                            <input type="text" class="form-control" id="domainnamehere" placeholder="Enter domain name here..">
+                <form action="{{route('search')}}" method="POST">
+                    @csrf
+                    <div class="bg-success rounded p-2">
+                        <div class="d-flex w-100">
+
+                            @if(session()->has('msg'))
+                                <span class="text-white">{{session('msg')}}</span>
+                            @endif
+                            <input type="text" name="name" class="form-control" id="domainnamehere" placeholder="Enter domain name here..">
                             <button type="submit" class="btn btn-success grd1"><i class="fa fa-search"></i></button>
                         </div>
                     </div>
-                    <hr>
+                    <hr> 
                     <div class="d-flex">
                         
                         <div class="checkbox checkbox-warning d-flex col-1 bg-success py-2 mx-2">
-                            <input id="domaincom" type="checkbox" class="styled" checked>
+                            <input value="com" name="ext" id="domaincom" type="checkbox" class="styled">
                             <label for="domaincom">.com</label>
                         </div>
                         <div class="checkbox checkbox-warning d-flex col-1 bg-success py-2 mx-2">
-                            <input id="domainnet" type="checkbox" class="styled" checked>
+                            <input value="net" name="ext" id="domainnet" type="checkbox" class="styled">
                             <label for="domainnet">.net</label>
                         </div>
                         <div class="checkbox checkbox-warning d-flex col-1 bg-success py-2 mx-2">
-                            <input id="domainorg" type="checkbox" class="styled">
+                            <input value="org" name="ext" id="domainorg" type="checkbox" class="styled">
                             <label for="domainorg">.org</label>
                         </div>
                         <div class="checkbox checkbox-warning d-flex col-1 bg-success py-2 mx-2">
-                            <input id="domaintv" type="checkbox" class="styled">
+                            <input value="tv" name="ext" id="domaintv" type="checkbox" class="styled">
                             <label for="domaintv">.tv</label>
                         </div>
                         <div class="checkbox checkbox-warning d-flex col-1 bg-success py-2 mx-2">
-                            <input id="domaininfo" type="checkbox" class="styled">
+                            <input value="info" name="ext" id="domaininfo" type="checkbox" class="styled">
                             <label for="domaininfo">.info</label>
                         </div>
 
